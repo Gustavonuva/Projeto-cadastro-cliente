@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="pt">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Meu aplicativo ASP.NET</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+       
+           
+       <div class="container body-content">
+              <asp:ContentPlaceHolder ID="MainContent" runat="server">
+              </asp:ContentPlaceHolder>
+              <footer class="footer">
+                <p>&copy; <%: DateTime.Now.Year %> - Todos os direitos reservados. Empresa XYZ</p>
+                <div class="social-icons">
+                  <a href="https://www.linkedin.com/in/gustavovnunes/" target="_blank"><img src="Images/linkedin.svg" alt="LinkedIn" width="30"></a>
+                  <a href="https://github.com/Gustavonuva" target="_blank"><img src="Images/github.svg" alt="GitHub" width="30"></a>
+
+                </div>
+              </footer>
+            </div>
+    </form>
+
+    <style>
+        body {
+  background-color: #f4f4f4;
+}
+    .container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .body-content {
+        flex: 1;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    footer {
+        background-color: #5d5d5d;
+        padding: 10px;
+        margin-top: auto;
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+    }
+    .social-icons a {
+    margin-right: 10px;
+  }
+</style>
+
+</body>
+</html>
